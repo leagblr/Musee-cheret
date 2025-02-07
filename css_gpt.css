@@ -1,0 +1,379 @@
+body {  
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----- HEADER ----- */
+header {
+    background-color: #333;
+    padding: 30px 5%; /* Augmenter le padding vertical pour plus de hauteur */
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Evite les débordements */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les éléments : logo à gauche, recherche à droite */
+    align-items: center; /* Alignement vertical centré */
+    width: 100%;
+    padding: 0; /* On enlève tout padding pour laisser les éléments s'étendre correctement */
+    gap: 40px; /* Espacement entre les éléments principaux (logo, nav-links et recherche) */
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo img {
+    height: 50px;
+    transition: height 0.3s ease-in-out;
+}
+
+/* NAVIGATION LIENS */
+.nav-links {
+    display: flex;
+    gap: 12%; /* Espacement entre les liens de navigation */
+    list-style: none;
+    padding: 0;
+    justify-content: center; /* Les liens sont centrés dans l'espace restant */
+    flex-grow: 1; /* Les liens prennent tout l'espace restant entre le logo et la loupe */
+}
+
+/* Espacement pour les liens */
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* BOUTON BILLETTERIE */
+button.billetterie {
+    background-color: #a36750;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.billetterie:hover {
+    background-color: #dac176;
+}
+
+/* RECHERCHE - Icône + Input */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 20px;
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Champ de recherche masqué par défaut */
+.search-bar {
+    display: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Quand on active la recherche, le champ s'affiche */
+.search-container.active .search-bar {
+    display: block;
+    width: 150px;
+    margin-left: 10px;
+}
+
+/* MENU BURGER (MOBILE) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    right: 20px;
+}
+
+.nav-links.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.nav-links.active li {
+    padding: 10px 0;
+}
+
+/* MEDIA QUERIES POUR RÉDUIRE LE LOGO SUR TABLETTE ET MOBILE */
+@media screen and (max-width: 1024px) {
+    .logo img {
+        height: 40px;
+    }
+
+    nav {
+        padding: 0 10px; /* Moins d'espace sur tablette */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-wrap: nowrap; /* Éviter que les éléments ne se replient sur plusieurs lignes */
+        justify-content: space-between;
+        padding: 0 10px;
+        gap: 10px; /* Réduire l'espacement pour éviter que ça dépasse */
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 3; /* Le menu burger doit être après la barre de recherche */
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px; /* Réduire l'espacement entre les liens */
+        width: 100%; /* Ajuste la largeur pour éviter que ça dépasse */
+        text-align: center;
+        background-color: transparent;
+        position: relative;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .search-container {
+        margin-right: 0;
+    }
+
+    .search-container {
+        flex-direction: row-reverse;
+        order: 1; /* Recherche avant le menu burger */
+    }
+
+    .search-icon {
+        margin-right: 10px;
+    }
+
+    /* Ajouter un bouton billetterie sur mobile */
+    button.billetterie {
+        display: inline-block;
+        margin-left: 10px; /* Espacement entre le bouton et la recherche */
+    }
+}
+
+/* Active le menu burger en affichant les liens de navigation */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Affiche le menu burger sur mobile */
+    }
+}
+
+/* ---- Fix pour éviter que le header ne se déforme sur tablette/mobile avec la recherche ---- */
+
+@media screen and (max-width: 768px) {
+    .search-container {
+        display: flex;
+        justify-content: flex-end; /* Recherche décalée à droite */
+        flex-wrap: wrap;
+    }
+
+    .search-container.active .search-bar {
+        display: block;
+        margin-left: 10px;
+    }
+}
+
+/* ----- SECTION EXPOSITION ----- */
+.exposition {
+    text-align: center;
+    padding: 50px;
+    background-color: #2d3440;
+}
+
+.exposition-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.exposition-img {
+    max-width: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.text-content {
+    max-width: 600px;
+    text-align: left;
+    color: #ede5e5;
+}
+
+@media (max-width: 768px) {
+    .exposition-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .exposition-img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+}
+
+/* ----- SECTION INFO ----- */
+.info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.bloc {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    background-color: #eaeaea;
+    text-align: center;
+    min-width: 250px;
+}
+
+/* BOUTON GÉNÉRAL */
+button {
+    background-color: #a36750;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #dac176;
+}
+
+/* ----- FOOTER ----- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #7e6253;
+    color: white;
+}
+
+/* ----- SECTION MUSÉE ----- */
+.musee {
+    background-color: #2d3440;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+}
+
+.musee-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.musee h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.musee p strong {
+    font-weight: bold;
+    color: white;
+}
+
+.musée {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f2a44;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.musée-container {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.video-360 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-360 iframe {
+    width: 100%;
+    height: 500px;
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    .video-360 iframe {
+        height: 300px;
+    }
+}
+
+/* ----- FOOTER ----- */
+footer {
+    background-color: #7e6253;
+    color: white;
+    width: 100%; /* Assure que le footer prend toute la largeur */
+    padding: 60px 5%; /* Augmenter le padding vertical pour plus de hauteur */
+    box-sizing: border-box; /* Pour que le padding ne dépasse pas la largeur */
+    display: flex;
+    justify-content: center; /* Centre horizontalement les éléments */
+    align-items: center; /* Centre verticalement les éléments */
+}
+
+footer p {
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Espacement entre les liens */
+}
+
+footer a {
+    color: white; /* Liens blancs */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Souligner au survol */
+}
