@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musée - Exposition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css_contact.css">
+    <!-- Font Awesome CDN for the magnifying glass icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="media/logo.png" alt="Logo du musée">
+            </div>
+            
+            <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+
+            <ul class="nav-links">
+                <li><a href="gpt.html">Accueil</a></li>
+                <li><a href="exposition.html">Exposition</a></li>
+                <li><a href="musee.html">Musée</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+			
+			<button> 
+				<li><a href="billetterie.html" class="button.billetterie">Billetterie</a></li>
+			</button>
+			
+            <!-- Icône de recherche -->
+            <div class="search-container">
+                <button class="search-icon">
+                    <!-- Font Awesome magnifying glass icon -->
+                    <i class="fas fa-search"></i>
+                </button>
+                <input type="text" class="search-bar" placeholder="Rechercher...">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="exposition">
+            <div class="exposition-content">
+                <h1> CONTACT </h1>
+            </div>
+        </section>
+
+        <section class="info">
+            <div class="container">
+                <h2>Se rendre au musée</h2>
+                <p>Adresse : Musée des Beaux-Arts Jules Chéret
+					33, avenue des Baumettes
+					06000 Nice.</p>
+				<p> Il est fortement conseillé de se rendre en transport en commun au musée, car nous ne disposons pas de parking à proximité. </p>
+				<p> 38 : arrêt « Musée Chéret » </p>
+				<p>	Tram L2 : arrêt « Centre Universitaire Méditerranéen » (accès par les escaliers) </p>
+        </section>
+
+        <section class="musée">
+            <div class="musée-container">
+                <h2>Une question ?</h2>
+							<form method="post" action="traitement.php"> 
+								<p>  
+									<label for="Nom">Nom</label> <input type="text" name="nom" id="Nom" required /> 
+								</p>
+								<p>
+									<label for="Email">Email</label> <input type="email" name="Email" id="Email" required /> 
+								</p>
+								<p>
+									<label for="Objet">Objet</label> 
+									<select name="option" id="option"> 
+										<option value="Accueil du Musée">Accueil du Musée</option> 
+										<option value="Administration">Administration</option> 
+										<option value="Conservation">Conservation</option> 
+										<option value="Direction">Direction</option> 
+										<option value="Médiation et Communication">Médiation et Communication</option> 
+										<option value="Régie des prêts et des questions">Régie des prêts et des questions</option> 
+										<option value="Secrétariat">Secrétariat</option> 
+									</select> 
+								</p
+							</form>
+							<form method="post" action="traitement.php"> 
+								<p> 
+								<label for="Message">Message </label><br /> 
+								<textarea name="Message" id="Message" required ></textarea> 
+								</p> 
+							</form> 
+				
+					
+					<button>
+						<li><a href="" class="button2">Envoyer</a></li>
+					</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+		<p><a href="https://www.musee-beaux-arts-nice.org/mentions-legales/">Mentions légales</a> <a href="file:///C:/Users/fahmi/OneDrive/Documents/Musee%20cheret/contact.html">Contact</a> <a href="https://www.musee-beaux-arts-nice.org/donnees-personnelles/">Politique de confidentialité</a></p>
+	</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
